@@ -1,11 +1,139 @@
 
 """Name(s): Dev Arora and Sean Kaloudis
 Name of Project: Adventure Game Final Project"""
+import os
+def death():
+  print("You have failed as a commander Mr. Cheng.\n Yes we know who you are.\n Press R to restart.")
+  begin = input("Enter R or r to enter game: ")
+  if begin in ("R","r"): 
+    os.system('clear')
+    start() 
+  else:
+    print ("You have failed to restart. You can no longer restart as you are not worthy to be a commander. ")
+def tie():
+  print("Both sides have stopped their attacks, no one wins or loses. Press R to restart")
+  begin = input("Enter R or r to enter game: ")
+  if begin in ("R","r"): 
+    os.system('clear')
+    start()
+  else:
+    print ("You have failed to restart. You can no longer restart as you are not worthy to be a commander. ")
+def victory():
+  print("Amazing Job Mr. Cheng. Not only are you a great teacher, but you are also a great commander. Please click the following link for a special prize \n https://www.youtube.com/watch?v=xfr64zoBTAQ&list=PL3KnTfyhrIlcudeMemKd6rZFGDWyK23vx&index=9 \n Press R to restart.")
+  begin = input("Enter R or r to enter game: ")
+  if begin in ("R","r"): 
+    os.system('clear')
+    start()
+  else:
+    print ("You have failed to restart. You can no longer restart as you are not worthy to be a commander. ")
+
+
+def whiteflag():
+  print("Your enemy sees your white flag, but proceeds to destroy your tower. YOU DIE")
+  death()
+  
+def cannonsfire():
+  print("Your cannons do little to no damage to the enemy army and your tower gets destroyed. YOU DIE")
+  death()
+def evacuateb():
+  print("You narrowly escape your tower before it is destroyed and you run away to a nearby town. You have lost this game but you are still alive, maybe you will get your revenge some day? Press R to restart")
+  begin = input("Enter R or r to enter game: ")
+  if begin in ("R","r"): 
+    start()
+  else:
+    print ("You have failed to restart. You can no longer restart as you are not worthy to be a commander. ")
+def evacuate ():
+  print (" You are unable to escape such chaos and you get caught by the enemy army. YOU DIE.")
+  death()
+def finalboss():
+  print("Your enemy sends in 5 heavily armored soldiers, 3 dragons, and 5 flaming catapults. You have no troops left to defend. Do you: \n A: Raise your white flag \n B: Fire your cannons \n C: Evacuate your tower")
+  choice = input("Do you:")
+  if choice in ("A", "a"):
+    whiteflag()
+  elif choice in ("B","b"): 
+    cannonsfire()
+  elif choice in ("C", "c"):
+    evacuateb()
+def finalcountdown():
+  print("Your enemy sends in 10 heavily armored soldiers, 10 calvarymen, and 15 dragons. You don’t have any dragons left to defend. Do you:\n A: Raise your white flag \n B: Fire your cannons \n C: Evacuate your tower.")
+  choice = input("Do you:")
+  if choice in ("A", "a"):
+    whiteflag()
+  elif choice in ("B","b"): 
+    cannonsfire()
+  elif choice in ("C", "c"):
+    evacuate()
+def firecannonsb2():
+  print("Your cannons are ineffective against the dragons and they destroy your tower.")  
+  death()
+def fivearchersb2():
+  print("The archers are unable to stop so many dragons and your tower is destroyed.")
+  death()
+def restofarmy():
+  print("The rest of your army isn’t much, but is barely able to defend against the dragons.")
+  finalboss()
+def tendragonsb2():
+  print("The enemy sends in 10 dragons, and you barely have any troops left to defend against them. Do you: \n A: Fire your cannons. \n B: Send in 5 archers \n C: Send in the rest of your entire army")
+  choice = input("Do you:")
+  if choice in ("A", "a"):
+    firecannonsb2()
+  elif choice in ("B","b"): 
+    fivearchersb2()
+  elif choice in ("C", "c"):
+    restofarmy()
+def firecannons():
+  print("The cannons are ineffective against the dragons and the dragons destroy your tower.")
+  death()
+def thirtyarchers():
+  print("The archer’s arrows do nothing to the dragons and they destroy your tower.")
+  death()
+def firebcatapult():
+  print("Your catapults successfully destroy the dragons and take ¼ of the enemy’s health. However, both sides have depleted their resources from this long war and you come to an agreement to stop attacking each other.")
+  tie()
+def fivewarriors():
+  print(" DEATH! \n Warriors don’t deal enough damage and the giants manage to reach your tower. Due to this your tower is destroyed.")
+  death()
+
+def fivegiants():
+  print("DEATH! \n The Giants brawl it out, but after the brawl, 5 of your opponent's giants survive and reach your tower. Due to this your tower is destroyed.")
+  death()
+
+def twentydragons():
+  print("Victory! \n The 20 dragons manage to melt the giants! Your dragons go unharmed as giants can’t attack flying troops. Your dragons manage to attack your opponent’s tower and completely destroy it!")
+  victory()
+
+def tengiants():
+  print(" You see 10 giants slowly stomping their way to your tower. Do you: \n A: You send 5 warriors \n B: You send 5 giants at them \n C: You send 20 dragons")
+  choice = input("Do you:")
+  if choice in ("A", "a"):
+    fivewarriors()
+  elif choice in ("B","b"): 
+    fivegiants()
+  elif choice in ("C", "c"):
+    twentydragons()
+
+def tenbdragons():
+  print("Your opponent sends in 10 dragons. Do you: \n A: Fire cannons \n B: Send 30 archers \n C: Fire catapults") 
+  choice = input("Do you:")
+  if choice in ("A", "a"):
+    firecannons()
+  elif choice in ("B","b"): 
+    thirtyarchers()
+  elif choice in ("C", "c"):
+    firebcatapult()
+  
+
+def tenheavysoldiers():
+  print("The warriors are quick and able to defeat the calvarymen, taking ¼ of your enemy’s tower.")
+  tenbdragons()
+def tenarchers():
+  print("The archer’s arrows are ineffective against the armor of the calvarymen, your tower loses ⅓ of its health.")
+  tenbdragons()
 def fifteenwarriors():
   print("The warriors are quick and able to defeat the calvarymen, taking ¼ of your enemy’s tower.")
   tenbdragons()
 
-def fiverarmoredwarriors():
+def fivearmoredwarriors():
   print("The dragon destroys the armored warriors because the armored warriors can’t attack the air. The dragon manages to reach the tower and destroys it. YOU DIE!")
   death()
   
@@ -16,6 +144,7 @@ def tendragons():
 def dragoncatapults():
   print("The catapults manage to destroy the dragon and reduce the opponent’s tower health by 1/4 .")
   tengiants()
+  
 def dragon():
   print("You see a dragon flying towards the tower. Do You: \n A: Send 5 armored warriors \n B: Send 10 dragons \n C: Fire catapults")
   choice = input("Do you:")
@@ -55,6 +184,7 @@ def fourwarriors():
 
 def skeletonarmy():
   print("BAD CHOICE! The frail skeletons barely manage to reach the archers and stop them but you have lost a lot of your troops. Winning will be difficult from here.")
+  tendragonsb2()
   
 
 

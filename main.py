@@ -246,5 +246,11 @@ def start():
   if begin in ("A","a"): 
     enter()
   else:
-    print ("You are banished. If you can't even type in A you are not worthy of being a commander in the legendary Tower Defense. Please restart the game or accept your defeat. ")
+    print ("You are banished. If you can't even type an A, you are not worthy of being a commander in the legendary Tower Defense. Please restart the game or accept your defeat. Press R to restart. ")
+  begin = input("Enter R or r to enter game: ")
+  if begin in ("R","r"): 
+    os.system('clear')
+    start() 
+  else:
+    print ("You have failed to restart. You can no longer restart as you are not worthy to be a commander. ")
 start()
